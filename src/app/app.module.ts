@@ -3,13 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
-import { SelectorComponent } from './components/selector/selector.component';
+import { SelectorImplNgSelectComponent } from './components/selector/impl-ng-select/selector.component';
+import { SelectorImplNatifComponent } from './components/selector/impl-natif/selector.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SelectorComponent,
+        SelectorImplNatifComponent,
+        SelectorImplNgSelectComponent,
         UserEditComponent
     ],
     imports: [

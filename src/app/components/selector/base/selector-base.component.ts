@@ -1,20 +1,10 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { SelectorItem, SelectorItemNullable } from '../../interfaces/selector-item.interface';
+import { Directive, Input } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+import { SelectorItem, SelectorItemNullable } from '../../../interfaces/selector-item.interface';
 
-@Component({
-    selector: 'app-selector',
-    templateUrl: './selector.component.html',
-    styleUrls: ['./selector.component.scss'],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => SelectorComponent),
-            multi: true
-        }
-    ]
-})
-export class SelectorComponent implements ControlValueAccessor {
+
+@Directive()
+export abstract class SelectorBaseComponent implements ControlValueAccessor {
 
     // Input properties
 
