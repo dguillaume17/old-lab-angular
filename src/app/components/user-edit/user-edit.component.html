@@ -1,0 +1,38 @@
+<form #formElRef>
+    <div class="form-field">
+        <label for="user-name">Name:</label>
+        <input type="text"
+            id="user-name"
+            name="user-name"
+            [ngModel]="user?.name"
+            (ngModelChange)="user.name = $event; onNameChanged()"
+        />
+        {{user?.name}}
+    </div>
+
+    <div class="form-field">
+        <label for="user-email">Email:</label>
+        <input type="text"
+            id="user-email"
+            name="user-email"
+            [ngModel]="user?.email"
+            (ngModelChange)="user.email = $event; onEmailChanged()"
+            #inputElRef
+        />
+        {{user?.email}}
+    </div>
+
+    <div class="form-field">
+        <label for="user-city">City:</label>
+        <app-selector
+            id="user-city"
+            name="user-city"
+            [availableItems]="cities"
+            [ngModel]="user?.city"
+            (ngModelChange)="user.city = $event; onCityChanged()">
+        </app-selector>
+    </div>
+
+    <button type="reset">Reset</button>
+    
+</form>
