@@ -1,7 +1,7 @@
 import { Component, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectorBaseComponent } from '../base/selector-base.component';
-import { COMPUTED_SELECTOR_IMPL_NG_SELECT_ANNOTATION } from '../base/selector-impl-type.constants2';
+import { COMPUTED_SELECTOR_IMPL_NG_SELECT_ANNOTATION } from '../base/selector-impl-type.static-annotations';
 
 @Component({
     selector: COMPUTED_SELECTOR_IMPL_NG_SELECT_ANNOTATION,

@@ -1,5 +1,5 @@
 import { environment } from '../../../../environments/environment';
-import { SelectorImplType } from './selector-impl-type.constants';
+import { SelectorImplType } from './selector-impl-type.static-enum';
 
 const BASE_ANNOTATION = 'app-selector';
 
