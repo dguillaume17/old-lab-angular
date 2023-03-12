@@ -1,25 +1,18 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './components/app.component';
-import { SelectorImplNgSelectComponent } from './components/selector/impl-ng-select/selector.component';
-import { SelectorImplNatifComponent } from './components/selector/impl-natif/selector.component';
-import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AppComponent } from './app.component';
+import { UserEditModule } from './features/user-edit/user-edit.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        SelectorImplNatifComponent,
-        SelectorImplNgSelectComponent,
-        UserEditComponent
+        AppComponent
     ],
     imports: [
         AppRoutingModule,
-        BrowserModule,
-        FormsModule // Avoid "Can't bind to 'ngModel' since it isn't a known property of 'input'"
+        UserEditModule
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }

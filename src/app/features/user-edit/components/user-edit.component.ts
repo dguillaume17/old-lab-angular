@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SelectorItem } from '../../interfaces/selector-item.interface';
-import { User } from '../../models/user.model';
+import { User } from '../../../core/models/user.model';
+import { SelectorItem } from '../../../shared/selector/base/interfaces/selector-item.interface';
 
 @Component({
     selector: 'app-user-edit',

@@ -1,4 +1,4 @@
-import { SelectorItem } from '../interfaces/selector-item.interface';
+import { SelectorItem } from '../../shared/selector/base/interfaces/selector-item.interface';
 
 export class User {
 

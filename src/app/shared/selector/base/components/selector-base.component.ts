@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import { SelectorItem, SelectorItemNullable } from '../../../interfaces/selector-item.interface';
+import { SelectorItem, SelectorItemNullable } from '../interfaces/selector-item.interface';
 
 
 @Directive()
