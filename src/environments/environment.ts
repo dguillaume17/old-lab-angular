@@ -2,8 +2,18 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-    production: false
+import { Type } from '@angular/core';
+import { NatifSelectorModule } from '../app/shared/selector/natif-selector/natif-selector.module';
+import { NgxSelectorModule } from '../app/shared/selector/ngx-selector/ngx-selector.module';
+
+interface EnvironmentCompliant {
+    production: boolean;
+    selectorModule: Type<NatifSelectorModule | NgxSelectorModule>
+}
+
+export const environment: EnvironmentCompliant = {
+    production: false,
+    selectorModule: NatifSelectorModule
 };
 
 /*

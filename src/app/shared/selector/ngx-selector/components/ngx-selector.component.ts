@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectorBaseComponent } from '../../base/components/selector-base.component';
 
 @Component({
-    selector: 'app-selector-2',
+    selector: 'app-selector',
     templateUrl: './ngx-selector.component.html',
     styleUrls: ['./ngx-selector.component.scss'],
     providers: [
