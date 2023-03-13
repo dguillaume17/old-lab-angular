@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '../../common/common.module';
 import { NgxSelectorComponent } from './components/ngx-selector.component';
 
@@ -11,7 +12,8 @@ import { NgxSelectorComponent } from './components/ngx-selector.component';
         NgxSelectorComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        NgSelectModule
     ]
 })
 export class NgxSelectorModule { }

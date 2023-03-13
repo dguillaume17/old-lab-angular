@@ -1,12 +1,7 @@
-NG-SELECT {{selectedItem|json}}
-
-<select
-    *ngIf="availableItems != null"
+<ng-select
+    [items]="usableAvailableItems" 
+    bindLabel="displayableValue" 
+    bindValue="identifier"
     [ngModel]="selectedItem"
     (ngModelChange)="selectedItem = $event; onSelectedItemChanged()">
-    <option
-        *ngFor="let availableItem of availableItems"
-        [ngValue]="availableItem">
-        {{availableItem.displayableValue}}
-    </option>
-</select>
+</ng-select>

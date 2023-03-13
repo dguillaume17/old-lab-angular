@@ -3,17 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { Type } from '@angular/core';
+import { CityApiCompliantService } from '../app/core/services/api/city-api-compliant.service';
+import { MockCityApiService } from '../app/core/services/api/mock/mock-city-api.service';
+import { MockUserApiService } from '../app/core/services/api/mock/mock-user-api.service';
+import { UserApiCompliantService } from '../app/core/services/api/user-api-compliant.service';
 import { NatifSelectorModule } from '../app/shared/selector/natif-selector/natif-selector.module';
 import { NgxSelectorModule } from '../app/shared/selector/ngx-selector/ngx-selector.module';
 
 interface EnvironmentCompliant {
     production: boolean;
-    selectorModule: Type<NatifSelectorModule | NgxSelectorModule>
+    selectorModule: Type<NatifSelectorModule | NgxSelectorModule>,
+    cityApiService: Type<CityApiCompliantService>,
+    userApiService: Type<UserApiCompliantService>
 }
 
 export const environment: EnvironmentCompliant = {
     production: false,
-    selectorModule: NatifSelectorModule
+    selectorModule: NatifSelectorModule,
+    cityApiService: MockCityApiService,
+    userApiService: MockUserApiService
 };
 
 /*

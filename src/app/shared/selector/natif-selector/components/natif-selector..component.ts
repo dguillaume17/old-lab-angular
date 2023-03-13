@@ -14,4 +14,14 @@ import { SelectorBaseComponent } from '../../base/components/selector-base.compo
         }
     ]
 })
-export class NatifSelectorComponent extends SelectorBaseComponent {}
+export class NatifSelectorComponent extends SelectorBaseComponent {
+
+    // Overriden protected work
+
+    protected override setupUsableAvailableItems() {
+        this.usableAvailableItems = [
+            null,
+            ...(this.availableItems ?? [])
+        ];
+    }
+}

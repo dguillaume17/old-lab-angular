@@ -1,22 +1,15 @@
-import { Nullable } from '../../shared/common/types/extended.type';
 import { SelectorItem } from '../../shared/selector/base/interfaces/selector-item.interface';
-import { City } from './city.model';
+import { Nullable } from '../../shared/common/types/extended.type';
 
-interface UserFields {
+interface CityFields {
     name: Nullable<string>;
-    email: Nullable<string>;
-    city: Nullable<City>;
 }
 
-export class User implements SelectorItem {
+export class City implements CityFields, SelectorItem {
 
     // Model properties
 
     public name: Nullable<string>;
-
-    public email: Nullable<string>;
-
-    public city: Nullable<City>;
 
     // Calculated properties
 
@@ -30,7 +23,8 @@ export class User implements SelectorItem {
 
     // Lifecycle
 
-    constructor(fields?: UserFields) {
+    constructor(fields: CityFields) {
         Object.assign(this, fields);
     }
+
 }

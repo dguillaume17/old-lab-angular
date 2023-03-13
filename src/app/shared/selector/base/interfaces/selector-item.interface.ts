@@ -6,4 +6,3 @@ export interface SelectorItem {
 
 }
 
-export type SelectorItemNullable = SelectorItem | undefined | null;

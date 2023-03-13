@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { CommonModule } from '../../shared/common/common.module';
-import { NatifSelectorModule } from '../../shared/selector/natif-selector/natif-selector.module';
-import { NgxSelectorModule } from '../../shared/selector/ngx-selector/ngx-selector.module';
+import { SelectorEntityModule } from '../../shared/selector-entity/selector-entity.module';
 import { UserEditComponent } from './components/user-edit.component';
 
 
@@ -15,7 +13,7 @@ import { UserEditComponent } from './components/user-edit.component';
     ],
     imports: [
         CommonModule,
-        environment.selectorModule
+        SelectorEntityModule
     ]
 })
 export class UserEditModule { }

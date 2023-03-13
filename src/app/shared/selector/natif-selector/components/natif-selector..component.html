@@ -1,12 +1,9 @@
-NATIF {{selectedItem|json}}
-
 <select
-    *ngIf="availableItems != null"
     [ngModel]="selectedItem"
     (ngModelChange)="selectedItem = $event; onSelectedItemChanged()">
     <option
-        *ngFor="let availableItem of availableItems"
+        *ngFor="let availableItem of usableAvailableItems"
         [ngValue]="availableItem">
-        {{availableItem.displayableValue}}
+        {{availableItem?.displayableValue}}
     </option>
 </select>

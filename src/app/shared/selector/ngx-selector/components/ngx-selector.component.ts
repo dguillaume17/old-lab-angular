@@ -1,6 +1,6 @@
 import { Component, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { SelectorBaseComponent } from '../../base/components/selector-base.component';
+import { SelectorBaseComponent } from '../../base/components/selector-base.component';;
 
 @Component({
     selector: 'app-selector',

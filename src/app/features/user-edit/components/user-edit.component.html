@@ -5,8 +5,7 @@
             id="user-name"
             name="user-name"
             [ngModel]="user?.name"
-            (ngModelChange)="user.name = $event; onNameChanged()"
-        />
+            (ngModelChange)="user.name = $event; onNameChanged()"/>
         {{user?.name}}
     </div>
 
@@ -16,21 +15,20 @@
             id="user-email"
             name="user-email"
             [ngModel]="user?.email"
-            (ngModelChange)="user.email = $event; onEmailChanged()"
-            #inputElRef
-        />
+            (ngModelChange)="user.email = $event; onEmailChanged()"/>
         {{user?.email}}
     </div>
 
     <div class="form-field">
         <label for="user-city">City:</label>
-        <app-selector
+        <app-selector-entity
             id="user-city"
             name="user-city"
-            [availableItems]="cities"
+            [entityType]="selectorEntityRef.entityTypeEnum.City"
             [ngModel]="user?.city"
-            (ngModelChange)="user.city = $event; onCityChanged()">
-        </app-selector>
+            (ngModelChange)="user.city = $event; onCityChanged()"
+            #selectorEntityRef>
+        </app-selector-entity>
     </div>
 
     <button type="reset">Reset</button>
