@@ -4,10 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CityApiCompliantService } from './core/services/api/city-api-compliant.service';
-import { MockCityApiService } from './core/services/api/mock/mock-city-api.service';
-import { MockUserApiService } from './core/services/api/mock/mock-user-api.service';
 import { UserApiCompliantService } from './core/services/api/user-api-compliant.service';
-import { UserEditModule } from './features/user-edit/user-edit.module';
+import { UserDetailModule } from './features/user-detail/user-detail.module';
+import { UserListModule } from './features/user-list/user-list.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +15,8 @@ import { UserEditModule } from './features/user-edit/user-edit.module';
     imports: [
         AppRoutingModule,
         CoreModule,
-        UserEditModule
+        UserDetailModule,
+        UserListModule
     ],
     bootstrap: [
         AppComponent

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { User } from '../../../core/models/user.model';
 
 @Component({
-    selector: 'app-user-edit',
-    templateUrl: './user-edit.component.html',
-    styleUrls: ['./user-edit.component.scss']
+    selector: 'app-user-detail',
+    templateUrl: './user-detail.component.html',
+    styleUrls: ['./user-detail.component.scss']
 })
-export class UserEditComponent {
+export class UserDetailComponent {
 
     // Public properties
 
