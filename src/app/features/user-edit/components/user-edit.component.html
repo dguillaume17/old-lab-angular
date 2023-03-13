@@ -4,9 +4,12 @@
         <input type="text"
             id="user-name"
             name="user-name"
+            required
             [ngModel]="user?.name"
-            (ngModelChange)="user.name = $event; onNameChanged()"/>
-        {{user?.name}}
+            (ngModelChange)="user.name = $event; onNameChanged()"
+            valueAccessorStatus
+            #userNameAccessorStatusRef="valueAccessorStatus"/>
+        {{user?.name}} {{userNameAccessorStatusRef.errorMessage}}
     </div>
 
     <div class="form-field">
@@ -14,9 +17,13 @@
         <input type="text"
             id="user-email"
             name="user-email"
+            required
+            email
             [ngModel]="user?.email"
-            (ngModelChange)="user.email = $event; onEmailChanged()"/>
-        {{user?.email}}
+            (ngModelChange)="user.email = $event; onEmailChanged()"
+            valueAccessorStatus
+            #userEmailAccessorStatusRef="valueAccessorStatus"/>
+        {{user?.email}} {{userEmailAccessorStatusRef.errorMessage}}
     </div>
 
     <div class="form-field">
@@ -32,5 +39,7 @@
     </div>
 
     <button type="reset">Reset</button>
+    <button type="button">Cancel</button>
+    <button type="submit">Save</button>
     
 </form>

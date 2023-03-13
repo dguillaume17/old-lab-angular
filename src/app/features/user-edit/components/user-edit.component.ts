@@ -10,7 +10,11 @@ export class UserEditComponent {
 
     // Public properties
 
-    public user = new User();
+    public user = new User({
+        name: 'gder',
+        email: 'gder@easi.net',
+        city: null
+    });
 
     // Event listeners
 
