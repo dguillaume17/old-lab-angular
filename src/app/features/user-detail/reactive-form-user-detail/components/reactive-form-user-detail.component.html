@@ -1,3 +1,4 @@
+REACTIVE FORMS
 <form
     *ngIf="user != null"
     (ngSubmit)="onFormSubmitted()">
@@ -20,8 +21,7 @@
         <input type="text"
             id="user-email"
             name="user-email"
-            required
-            email
+            [formControl]="addressControl"
             [ngModel]="user.email"
             (ngModelChange)="user.email = $event; onEmailChanged()"
             valueAccessorStatus

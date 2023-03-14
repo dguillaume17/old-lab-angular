@@ -16,8 +16,8 @@ import { NgxSelectorModule } from '../app/shared/selector/ngx-selector/ngx-selec
 
 interface EnvironmentCompliant {
     production: boolean;
-    userDetailModule: Type<ReactiveFormUserDetailModule | TemplateDrivenUserDetailModule>,
-    userDetailComponent: Type<ReactiveFormUserDetailComponent | TemplateDrivenUserDetailComponent>
+    // userDetailModule: Type<ReactiveFormUserDetailModule | TemplateDrivenUserDetailModule>,
+    // userDetailComponent: Type<ReactiveFormUserDetailComponent | TemplateDrivenUserDetailComponent>
     selectorModule: Type<NatifSelectorModule | NgxSelectorModule>,
     cityApiService: Type<CityApiCompliantService>,
     userApiService: Type<UserApiCompliantService>
@@ -25,8 +25,8 @@ interface EnvironmentCompliant {
 
 export const environment: EnvironmentCompliant = {
     production: false,
-    userDetailModule: ReactiveFormUserDetailModule,
-    userDetailComponent: ReactiveFormUserDetailComponent,
+    // userDetailModule: ReactiveFormUserDetailModule,
+    // userDetailComponent: ReactiveFormUserDetailComponent,
     selectorModule: NatifSelectorModule,
     cityApiService: MockCityApiService,
     userApiService: MockUserApiService

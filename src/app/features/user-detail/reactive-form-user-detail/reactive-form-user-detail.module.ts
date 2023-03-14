@@ -20,4 +20,4 @@ import { ReactiveFormUserDetailComponent } from './components/reactive-form-user
         SelectorEntityModule
     ]
 })
-export class ReactiveFormUserDetailModule { }
+export class ReactiveFormUserDetailModule {}
