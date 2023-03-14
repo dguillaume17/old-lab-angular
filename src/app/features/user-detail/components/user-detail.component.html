@@ -1,11 +1,12 @@
-<form #formElRef>
+<form #formElRef *ngIf="user != null">
+    {{user.uid}}
     <div class="form-field">
         <label for="user-name">Name:</label>
         <input type="text"
             id="user-name"
             name="user-name"
             required
-            [ngModel]="user?.name"
+            [ngModel]="user.name"
             (ngModelChange)="user.name = $event; onNameChanged()"
             valueAccessorStatus
             #userNameAccessorStatusRef="valueAccessorStatus"/>
@@ -19,7 +20,7 @@
             name="user-email"
             required
             email
-            [ngModel]="user?.email"
+            [ngModel]="user.email"
             (ngModelChange)="user.email = $event; onEmailChanged()"
             valueAccessorStatus
             #userEmailAccessorStatusRef="valueAccessorStatus"/>
@@ -32,7 +33,7 @@
             id="user-city"
             name="user-city"
             [entityType]="selectorEntityRef.entityTypeEnum.City"
-            [ngModel]="user?.city"
+            [ngModel]="user.city"
             (ngModelChange)="user.city = $event; onCityChanged()"
             #selectorEntityRef>
         </app-selector-entity>

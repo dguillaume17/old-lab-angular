@@ -3,6 +3,7 @@ import { SelectorItem } from '../../shared/selector/base/interfaces/selector-ite
 import { City } from './city.model';
 
 interface UserFields {
+    uid: Nullable<string>;
     name: Nullable<string>;
     email: Nullable<string>;
     city: Nullable<City>;
@@ -11,6 +12,8 @@ interface UserFields {
 export class User implements SelectorItem {
 
     // Model properties
+
+    public uid: Nullable<string>;
 
     public name: Nullable<string>;
 

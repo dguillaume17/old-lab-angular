@@ -1,1 +1,9 @@
-<a [routerLink]="'/user-detail'">Lien</a>
+<div
+    *ngFor="let user of users">
+    <a
+        [routerLink]="routeDetailByUserUid.get(user.uid)?.commands"
+        [queryParams]="routeDetailByUserUid.get(user.uid)?.navigationExtras?.queryParams"
+        [relativeTo]="null">
+        {{user.uid}}-{{user.name}}
+    </a>
+</div>
