@@ -1,3 +1,4 @@
+import { jsonMember, jsonObject } from 'typedjson';
 import { Nullable } from '../../shared/common/types/extended.type';
 import { SelectorItem } from '../../shared/selector/base/interfaces/selector-item.interface';
 import { City } from './city.model';
@@ -9,17 +10,22 @@ interface UserFields {
     city: Nullable<City>;
 }
 
+@jsonObject
 export class User implements SelectorItem {
 
     // Model properties
 
-    public uid: Nullable<string>;
+    @jsonMember
+    public uid?: string;
 
-    public name: Nullable<string>;
+    @jsonMember
+    public name?: string;
 
-    public email: Nullable<string>;
+    @jsonMember
+    public email?: string;
 
-    public city: Nullable<City>;
+    @jsonMember
+    public city?: City;
 
     // Calculated properties
 

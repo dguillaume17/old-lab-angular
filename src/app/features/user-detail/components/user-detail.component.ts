@@ -41,6 +41,15 @@ export class UserDetailComponent implements OnInit {
         console.log('onCityChanged()');
     }
 
+    public onFormSubmitted() {
+        if (this.user == null) {
+            return;
+        }
+
+        this._userApiService.updateUser(this.user);
+        console.log('user updated !');
+    }
+
     // Setup listeners
 
     private setupActivateRouteListener() {

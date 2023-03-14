@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Nullable } from '../../../../shared/common/types/extended.type';
 import { User } from '../../../models/user.model';
+import { TypedJsonUtils } from '../../../utils/typed-json.utils';
 import { UserApiCompliantService } from '../user-api-compliant.service';
 
 @Injectable()
@@ -20,11 +21,28 @@ export class MockUserApiService extends UserApiCompliantService {
     // Interface
 
     public getUser(uid: string): Nullable<User> {
-        return this._mockUsers.find(user => user.uid === uid);
+        const user = this._mockUsers.find(user => user.uid === uid);
+
+        if (user == null) {
+            return null;
+        }
+
+        return TypedJsonUtils.copyObject(user, User);
     }
 
     public getUsers(): User[] {
-        return this._mockUsers;
+        return TypedJsonUtils.copyArray(this._mockUsers, User);
+    }
+
+    public updateUser(user: User): void {
+        // TODO Obsidian
+        const index = this._mockUsers.findIndex(findUser => findUser.uid === user.uid);
+
+        if (index === -1) {
+            throw new Error('User not found !');
+        }
+
+        this._mockUsers[index] = TypedJsonUtils.copyObject(user, User);
     }
 
 }

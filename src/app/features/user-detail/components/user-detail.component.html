@@ -1,4 +1,8 @@
-<form #formElRef *ngIf="user != null">
+<form
+    *ngIf="user != null"
+    (ngSubmit)="onFormSubmitted()"
+    #formElRef
+    >
     {{user.uid}}
     <div class="form-field">
         <label for="user-name">Name:</label>

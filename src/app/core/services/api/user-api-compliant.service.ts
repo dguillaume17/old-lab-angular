@@ -7,5 +7,7 @@ export abstract class UserApiCompliantService {
 
     public abstract getUser(uid: string): Nullable<User>;
     public abstract getUsers(): User[];
+    
+    public abstract updateUser(user: User): void;
 
 }
