@@ -1,8 +1,6 @@
 <form
     *ngIf="user != null"
-    (ngSubmit)="onFormSubmitted()"
-    #formElRef
-    >
+    (ngSubmit)="onFormSubmitted()">
     {{user.uid}}
     <div class="form-field">
         <label for="user-name">Name:</label>
@@ -14,7 +12,7 @@
             (ngModelChange)="user.name = $event; onNameChanged()"
             valueAccessorStatus
             #userNameAccessorStatusRef="valueAccessorStatus"/>
-        {{user?.name}} {{userNameAccessorStatusRef.errorMessage}}
+        {{user.name}} {{userNameAccessorStatusRef.errorMessage}}
     </div>
 
     <div class="form-field">
@@ -28,7 +26,22 @@
             (ngModelChange)="user.email = $event; onEmailChanged()"
             valueAccessorStatus
             #userEmailAccessorStatusRef="valueAccessorStatus"/>
-        {{user?.email}} {{userEmailAccessorStatusRef.errorMessage}}
+        {{user.email}} {{userEmailAccessorStatusRef.errorMessage}}
+    </div>
+
+    <div class="form-field">
+        <label for="user-password">Password:</label>
+        <app-input-text
+            id="user-password"
+            name="user-password"
+            required
+            [ngModel]="user.password"
+            (ngModelChange)="user.password = $event; onPasswordChanged()"
+            password-checker
+            valueAccessorStatus
+            #userPasswordAccessorStatusRef="valueAccessorStatus">
+        </app-input-text>
+        {{user.password}} {{userPasswordAccessorStatusRef.errorMessage}} {{ngForm?.form?.get('user-password')?.errors | json}}
     </div>
 
     <div class="form-field">

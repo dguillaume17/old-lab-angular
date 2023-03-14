@@ -1,0 +1,5 @@
+<input
+    type="text"
+    [ngModel]="text"
+    (ngModelChange)="text = $event; onTextChanged()">
+<button type="button" (clear)="onClearButtonClicked()">Clear</button>

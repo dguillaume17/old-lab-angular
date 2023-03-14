@@ -3,9 +3,9 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectorBaseComponent } from '../../base/components/selector-base.component';
 
 @Component({
-    selector: 'app-selector.',
-    templateUrl: './natif-selector..component.html',
-    styleUrls: ['./natif-selector..component.scss'],
+    selector: 'app-selector',
+    templateUrl: './natif-selector.component.html',
+    styleUrls: ['./natif-selector.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,

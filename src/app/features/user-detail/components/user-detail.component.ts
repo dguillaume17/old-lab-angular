@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RouteQueryParam } from '../../../core/enums/route-query-param.enum';
 import { User } from '../../../core/models/user.model';
@@ -15,6 +16,11 @@ export class UserDetailComponent implements OnInit {
     // Public properties
 
     public user: Nullable<User>;
+
+    // Template refs
+
+    @ViewChild(NgForm)
+    public ngForm?: NgForm;
 
     // Lifecycle
 
@@ -37,17 +43,27 @@ export class UserDetailComponent implements OnInit {
         console.log('onEmailChanged()');
     }
 
+    public onPasswordChanged() {
+        console.log('onPasswordChanged()');
+    }
+
     public onCityChanged() {
         console.log('onCityChanged()');
     }
 
     public onFormSubmitted() {
-        if (this.user == null) {
+        if (this.ngForm == null || this.user == null) {
+            return;
+        }
+
+        this.ngForm.form.markAllAsTouched();
+
+        if (!this.ngForm.form.valid) {
+            alert('form invalid')
             return;
         }
 
         this._userApiService.updateUser(this.user);
-        console.log('user updated !');
     }
 
     // Setup listeners

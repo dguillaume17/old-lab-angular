@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '../../common/common.module';
-import { NatifSelectorComponent } from './components/natif-selector..component';
+import { NatifSelectorComponent } from './components/natif-selector.component';
 
 
 @NgModule({

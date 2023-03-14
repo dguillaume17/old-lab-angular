@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteSegment } from './core/enums/route-segment.enum';
+import { NavigationParametersUtils } from './core/utils/navigation-parameters.utils';
 import { UserDetailComponent } from './features/user-detail/components/user-detail.component';
 import { UserListComponent } from './features/user-list/components/user-list.component';
 
 const routes: Routes = [
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: `/${RouteSegment.User}/${RouteSegment.List}`
+    },
     {
         path: RouteSegment.User,
         children: [
@@ -17,6 +23,10 @@ const routes: Routes = [
                 component: UserListComponent
             }
         ]
+    },
+    {
+        path: '**',
+        redirectTo: '/user/list'
     }
 ];
 

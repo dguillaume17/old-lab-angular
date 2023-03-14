@@ -4,6 +4,15 @@ import { NavigationParameters } from '../interfaces/navigation-parameters.interf
 
 export namespace NavigationParametersUtils {
 
+    export function getUserListParameters(userUid: string): NavigationParameters {
+        return {
+            commands: [
+                RouteSegment.User,
+                RouteSegment.List
+            ]
+        };
+    }
+
     export function getUserDetailParameters(userUid: string): NavigationParameters {
         return {
             commands: [

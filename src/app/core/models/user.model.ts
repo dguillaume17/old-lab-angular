@@ -25,6 +25,9 @@ export class User implements SelectorItem {
     public email?: string;
 
     @jsonMember
+    public password?: string;
+
+    @jsonMember
     public city?: City;
 
     // Calculated properties
