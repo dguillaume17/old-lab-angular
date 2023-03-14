@@ -1,17 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { RouteQueryParam } from '../../../core/enums/route-query-param.enum';
-import { User } from '../../../core/models/user.model';
-import { UserApiCompliantService } from '../../../core/services/api/user-api-compliant.service';
-import { Nullable } from '../../../shared/common/types/extended.type';
+import { RouteQueryParam } from '../../../../core/enums/route-query-param.enum';
+import { User } from '../../../../core/models/user.model';
+import { UserApiCompliantService } from '../../../../core/services/api/user-api-compliant.service';
+import { Nullable } from '../../../../shared/common/types/extended.type';
 
 @Component({
     selector: 'app-user-detail',
-    templateUrl: './user-detail.component.html',
-    styleUrls: ['./user-detail.component.scss']
+    templateUrl: './template-driven-user-detail.component.html',
+    styleUrls: ['./template-driven-user-detail.component.scss']
 })
-export class UserDetailComponent implements OnInit {
+export class TemplateDrivenUserDetailComponent implements OnInit {
 
     // Public properties
 

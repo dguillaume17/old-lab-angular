@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CityApiCompliantService } from './core/services/api/city-api-compliant.service';
 import { UserApiCompliantService } from './core/services/api/user-api-compliant.service';
-import { UserDetailModule } from './features/user-detail/user-detail.module';
+import { ReactiveFormUserDetailModule } from './features/user-detail/reactive-form-user-detail/reactive-form-user-detail.module';
 import { UserListModule } from './features/user-list/user-list.module';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { UserListModule } from './features/user-list/user-list.module';
     imports: [
         AppRoutingModule,
         CoreModule,
-        UserDetailModule,
+        ReactiveFormUserDetailModule,
         UserListModule
     ],
     bootstrap: [

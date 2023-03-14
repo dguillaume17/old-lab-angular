@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { environment } from '../environments/environment';
 import { RouteSegment } from './core/enums/route-segment.enum';
-import { NavigationParametersUtils } from './core/utils/navigation-parameters.utils';
-import { UserDetailComponent } from './features/user-detail/components/user-detail.component';
+import { ReactiveFormUserDetailComponent } from './features/user-detail/reactive-form-user-detail/components/reactive-form-user-detail.component';
 import { UserListComponent } from './features/user-list/components/user-list.component';
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
         children: [
             {
                 path: RouteSegment.Detail,
-                component: UserDetailComponent
+                component: ReactiveFormUserDetailComponent
             },
             {
                 path: RouteSegment.List,
