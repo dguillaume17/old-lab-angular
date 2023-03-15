@@ -17,14 +17,6 @@ export class InputTextPasswordChecker implements Validator {
 
     validate(control: AbstractControl): ValidationErrors | null {
         console.log('checker')
-        const text = control.value as string;
-
-        if (text === 'easi') {
-            return {
-                invalidPassword: true
-            };
-        }
-
-        return null;
+        
     }
 }
