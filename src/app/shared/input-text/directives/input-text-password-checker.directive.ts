@@ -1,5 +1,6 @@
 import { Directive, forwardRef } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
+import { InputTextPasswordCheckerValidator } from '../validators/input-text-password-checker.validator';
 
 @Directive({
     selector: 'app-input-text[password-checker]',
@@ -17,6 +18,14 @@ export class InputTextPasswordChecker implements Validator {
 
     validate(control: AbstractControl): ValidationErrors | null {
         console.log('checker')
+        const passwordCheck = InputTextPasswordCheckerValidator()(control);
+
+        if (passwordCheck != null) {
+            return {
+                ...passwordCheck
+            };
+        }
         
+        return null;
     }
 }
