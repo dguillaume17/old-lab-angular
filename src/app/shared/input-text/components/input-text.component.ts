@@ -1,5 +1,5 @@
 import { Component, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Nullable } from '../../common/types/extended.type';
 
 @Component({
@@ -14,7 +14,7 @@ import { Nullable } from '../../common/types/extended.type';
         }
     ]
 })
-export class InputTextComponent {
+export class InputTextComponent implements ControlValueAccessor {
 
     // Public properties
 
