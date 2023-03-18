@@ -1,6 +1,5 @@
-import { Directive, Inject, Input, Optional } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import { NgControl, ValidationErrors } from '@angular/forms';
-import { Nullable } from '../../shared/common/types/extended.type';
 
 @Directive({
     selector: '[ngModel][valueAccessorStatus]',
@@ -83,7 +82,6 @@ export class ValueAccessorStatusDirective {
     // Inner work
 
     private getErrorValueFor(errorProperty: string): unknown | null {
-        console.log(this.error)
         return this.error?.[errorProperty];
     }
 

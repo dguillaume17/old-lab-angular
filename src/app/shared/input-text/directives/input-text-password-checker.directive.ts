@@ -17,7 +17,6 @@ export class InputTextPasswordChecker implements Validator {
     // Lifecycle
 
     validate(control: AbstractControl): ValidationErrors | null {
-        console.log('checker')
         const passwordCheck = InputTextPasswordCheckerValidator()(control);
 
         if (passwordCheck != null) {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { UserDetailBaseComponent } from '../../base/components/user-detail-base.component';
 
 @Component({
@@ -13,6 +12,4 @@ import { UserDetailBaseComponent } from '../../base/components/user-detail-base.
 export class ReactiveFormUserDetailComponent extends UserDetailBaseComponent implements OnInit {
 
     // Form control properties
-
-    public addressControl = new FormControl('', [Validators.required]);
 }

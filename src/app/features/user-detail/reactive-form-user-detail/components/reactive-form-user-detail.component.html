@@ -1,64 +1,68 @@
-REACTIVE FORMS
+<app-back-navigation-button>
+</app-back-navigation-button>
+<button type="button">Edit</button>
 <form
     *ngIf="user != null"
     (ngSubmit)="onFormSubmitted()">
-    <div class="form-field">
-        <label for="user-name">Name:</label>
-        <input type="text"
-            id="user-name"
-            name="user-name"
-            required
-            [ngModel]="user.name"
-            (ngModelChange)="user.name = $event; onNameChanged()"
-            valueAccessorStatus
-            #userNameAccessorStatusRef="valueAccessorStatus"/>
-        {{user.name}} {{userNameAccessorStatusRef.errorMessage}}
+
+    <div class="form-group">
+        <div class="form-field">
+            <label for="user-name">Name:</label>
+            <input type="text"
+                id="user-name"
+                name="user-name"
+                required
+                [ngModel]="user.name"
+                (ngModelChange)="user.name = $event; onNameChanged()"
+                valueAccessorStatus
+                #userNameAccessorStatusRef="valueAccessorStatus"/>
+            {{userNameAccessorStatusRef.errorMessage}}
+        </div>
+    
+        <div class="form-field">
+            <label for="user-email">Email:</label>
+            <input type="text"
+                id="user-email"
+                name="user-email"
+                [ngModel]="user.email"
+                (ngModelChange)="user.email = $event; onEmailChanged()"
+                valueAccessorStatus
+                #userEmailAccessorStatusRef="valueAccessorStatus"/>
+            {{userEmailAccessorStatusRef.errorMessage}}
+        </div>
+    
+        <div class="form-field">
+            <label for="user-password">Password:</label>
+            <app-input-text
+                id="user-password"
+                name="user-password"
+                required
+                [ngModel]="user.password"
+                (ngModelChange)="user.password = $event; onPasswordChanged()"
+                password-checker
+                valueAccessorStatus
+                #userPasswordAccessorStatusRef="valueAccessorStatus">
+            </app-input-text>
+            {{userPasswordAccessorStatusRef.errorMessage}}
+        </div>
+    
+        <div class="form-field">
+            <label for="user-city">City:</label>
+            <app-selector-entity
+                id="user-city"
+                name="user-city"
+                [entityType]="selectorEntityRef.entityTypeEnum.City"
+                [ngModel]="user.city"
+                (ngModelChange)="user.city = $event; onCityChanged()"
+                #selectorEntityRef>
+            </app-selector-entity>
+        </div>
     </div>
 
-    <div class="form-field">
-        <label for="user-email">Email:</label>
-        <input type="text"
-            id="user-email"
-            name="user-email"
-            [formControl]="addressControl"
-            [ngModel]="user.email"
-            (ngModelChange)="user.email = $event; onEmailChanged()"
-            valueAccessorStatus
-            #userEmailAccessorStatusRef="valueAccessorStatus"/>
-        {{user.email}} {{userEmailAccessorStatusRef.errorMessage}}
-    </div>
-
-    <div class="form-field">
-        <label for="user-password">Password:</label>
-        <app-input-text
-            id="user-password"
-            name="user-password"
-            required
-            [ngModel]="user.password"
-            (ngModelChange)="user.password = $event; onPasswordChanged()"
-            password-checker
-            valueAccessorStatus
-            #userPasswordAccessorStatusRef="valueAccessorStatus">
-        </app-input-text>
-        {{user.password}} {{userPasswordAccessorStatusRef.errorMessage}} {{ngForm?.form?.get('user-password')?.errors | json}}
-    </div>
-
-    <div class="form-field">
-        <label for="user-city">City:</label>
-        <app-selector-entity
-            id="user-city"
-            name="user-city"
-            [entityType]="selectorEntityRef.entityTypeEnum.City"
-            [ngModel]="user.city"
-            (ngModelChange)="user.city = $event; onCityChanged()"
-            #selectorEntityRef>
-        </app-selector-entity>
+    <div class="form-buttons">
+        <button type="reset">Reset</button>
+        <button type="button">Cancel</button>
+        <button type="submit">Save</button>
     </div>
 
 </form>
-
-<div class="form-buttons">
-    <button type="reset">Reset</button>
-    <button type="button">Cancel</button>
-    <button type="submit">Save</button>
-</div>
