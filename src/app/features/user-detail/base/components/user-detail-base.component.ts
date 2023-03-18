@@ -20,11 +20,18 @@ export abstract class UserDetailBaseComponent implements TouchedFormDeactivateCo
     // Public properties
 
     public user: Nullable<User>;
+    public readonly = true;
 
     // Template refs
 
     @ViewChild(NgForm)
     public ngForm?: NgForm;
+
+    // Calculated properties
+
+    public get editButtonText(): string {
+        return this.readonly ? 'Edit' : 'Cancel';
+    }
 
     // Lifecycle
 
@@ -67,6 +74,7 @@ export abstract class UserDetailBaseComponent implements TouchedFormDeactivateCo
         }
 
         this.ngForm.form.markAsUntouched();
+        this.readonly = true;
 
 
         this._userApiService.updateUser(this.user);

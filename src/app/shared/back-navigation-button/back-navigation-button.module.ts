@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BackNavigationButtonComponent } from './components/back-navigation-button.component';
+import { BackNavigationButtonDirective } from './directives/back-navigation-button.directive';
 
 
 @NgModule({
     declarations: [
-        BackNavigationButtonComponent
+        BackNavigationButtonDirective
     ],
     exports: [
-        BackNavigationButtonComponent
+        BackNavigationButtonDirective
     ]
 })
 export class BackButtonNavigationModule { }
