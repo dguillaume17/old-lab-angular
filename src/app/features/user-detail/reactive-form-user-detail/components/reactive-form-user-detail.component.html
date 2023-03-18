@@ -2,7 +2,6 @@ REACTIVE FORMS
 <form
     *ngIf="user != null"
     (ngSubmit)="onFormSubmitted()">
-    {{user.uid}}
     <div class="form-field">
         <label for="user-name">Name:</label>
         <input type="text"
@@ -56,8 +55,10 @@ REACTIVE FORMS
         </app-selector-entity>
     </div>
 
+</form>
+
+<div class="form-buttons">
     <button type="reset">Reset</button>
     <button type="button">Cancel</button>
     <button type="submit">Save</button>
-    
-</form>
+</div>

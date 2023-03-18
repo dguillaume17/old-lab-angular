@@ -27,7 +27,7 @@ export const environment: EnvironmentCompliant = {
     production: false,
     // userDetailModule: ReactiveFormUserDetailModule,
     // userDetailComponent: ReactiveFormUserDetailComponent,
-    selectorModule: NatifSelectorModule,
+    selectorModule: NgxSelectorModule,
     cityApiService: MockCityApiService,
     userApiService: MockUserApiService
 };

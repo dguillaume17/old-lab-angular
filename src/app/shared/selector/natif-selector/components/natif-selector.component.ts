@@ -5,7 +5,10 @@ import { SelectorBaseComponent } from '../../base/components/selector-base.compo
 @Component({
     selector: 'app-selector',
     templateUrl: './natif-selector.component.html',
-    styleUrls: ['./natif-selector.component.scss'],
+    styleUrls: [
+        '../../base/components/selector-base.component.scss',
+        './natif-selector.component.scss'
+    ],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,

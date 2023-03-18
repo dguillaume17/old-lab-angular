@@ -5,7 +5,10 @@ import { SelectorBaseComponent } from '../../base/components/selector-base.compo
 @Component({
     selector: 'app-selector',
     templateUrl: './ngx-selector.component.html',
-    styleUrls: ['./ngx-selector.component.scss'],
+    styleUrls: [
+        '../../base/components/selector-base.component.scss',
+        './ngx-selector.component.scss'
+    ],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
